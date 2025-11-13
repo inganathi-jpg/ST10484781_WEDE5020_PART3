@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /node_modules/
+Disallow: /js/
+Allow: /css/
+Allow: /images/
+
+# Sitemap link updated to your actual GitHub Pages site
+Sitemap: https://inganathi-jpg.github.io/ST10484781_WEDE5020_PART3/sitemap.xml
+

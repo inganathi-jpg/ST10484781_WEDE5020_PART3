@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Gcobs & Son</title>
+  <meta name="description" content="Contact Gcobs & Son Cleaning Services for bookings, quotes, or general enquiries.">
+  <meta name="keywords" content="Gcobs and Son, cleaning contact, Grahamstown cleaners">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <img src="images/WhatsApp Image 2025-04-18 at 22.36.48_0814f664.jpg" alt="Gcobs & Son Logo" class="logo">
+    </div>
+    <div class="header-right">
+      <p>Gcobs and Son Cleaning Services</p>
+    </div>
+  </header>
+
+  <h1>Contact Us</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="blog.html">Blog</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="enquiry.html">Enquiry</a>
+  </nav>
+
+  <section>
+    <h2>Get in Touch</h2>
+    <p><strong>Gcobisa:</strong> (+27)72 430 9646</p>
+    <p><strong>Lwazi:</strong> (+27)83 390 9646</p>
+    <p><strong>Address:</strong> 5241 Extension 6, Makhanda, South Africa</p>
+    <p><strong>Email:</strong> Gcobs&Son@gmail.com</p>
+    <p><a href="https://wa.me/+27724309646" target="_blank">Chat with us on WhatsApp</a></p>
+  </section>
+
+  <section id="map">
+    <h2>Find Us</h2>
+    <iframe
+      src="https://www.google.com/maps?q=5241+Extension+6+Grahamstown&output=embed"
+      width="100%"
+      height="350"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Map showing 5241 Extension 6, Grahamstown">
+    </iframe>
+  </section>
+
+  <section>
+    <h2>Online Booking</h2>
+    <p>Book your cleaning service online by filling out the form below:</p>
+
+    <form id="contactForm" novalidate>
+      <input type="text" name="name" id="name" placeholder="Your Name" required>
+      <input type="email" name="email" id="email" placeholder="Your Email" required>
+
+      <label for="messageType">Message type</label>
+      <select name="messageType" id="messageType" required>
+        <option value="">-- Select --</option>
+        <option value="General Enquiry">General Enquiry</option>
+        <option value="Quote Request">Quote Request</option>
+        <option value="Booking">Booking</option>
+      </select>
+
+      <textarea name="message" id="message" rows="5" placeholder="Your message" required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+
+    <!-- Notification message -->
+    <div id="notification" class="hidden">Thank you! Your message has been sent successfully.</div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Gcobs & Son Cleaning Services</p>
+  </footer>
+
+  <script>
+    // CONTACT FORM VALIDATION & NOTIFICATION
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const messageType = document.getElementById("messageType").value;
+      const message = document.getElementById("message").value.trim();
+
+      // Basic validation
+      if (!name || !email || !messageType || !message) {
+        alert("Please fill in all fields before submitting.");
+        return;
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+      if (!email.match(emailPattern)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      // Show notification message
+      const notification = document.getElementById("notification");
+      notification.textContent = `Thank you, ${name}! Your ${messageType.toLowerCase()} has been sent successfully.`;
+      notification.classList.remove("hidden");
+      notification.classList.add("visible");
+
+      // Reset form
+      document.getElementById("contactForm").reset();
+
+      // Hide notification after 4 seconds
+      setTimeout(() => {
+        notification.classList.remove("visible");
+        notification.classList.add("hidden");
+      }, 4000);
+    });
+  </script>
+</body>
+</html>

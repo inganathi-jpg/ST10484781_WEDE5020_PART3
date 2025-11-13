@@ -1,0 +1,355 @@
+/*GLOBAL RESET & BASE STYLES*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 0;
+  margin: 0;
+}
+
+/*HEADER*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #005bb6;
+  color: #fff;
+  padding: 15px 20px;
+}
+
+.header-left img.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.header-right p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* ===============================
+   NAVIGATION
+   =============================== */
+nav {
+  background-color: #0073e6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 8px 15px;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: white;
+  color: #0073e6;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* ===============================
+   HEADINGS & TEXT
+   =============================== */
+h1, h2, h3 {
+  color: #005bb6;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* ===============================
+   CONTAINERS & SECTIONS
+   =============================== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+/*IMAGES & RESPONSIVE DESIGN */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/*FOOTER*/
+footer {
+  text-align: center;
+  background: #005bb6;
+  color: white;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+/*GALLERY GRID & LIGHTBOX*/
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.gallery-grid img {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* LIGHTBOX OVERLAY */
+#lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+#lightboxOverlay.open {
+  display: flex;
+}
+
+#lightboxContent {
+  max-width: 1000px;
+  width: 100%;
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+#lightboxContent img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 8px;
+}
+
+#lightboxClose {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #333;
+}
+
+/*SEARCH BOX (Services + Blog)*/
+input[type="search"] {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 520px;
+  margin: 10px auto 20px;
+  display: block;
+}
+
+/*ACCORDION (Services Page)*/
+.accordion-toggle {
+  background: #e9f3ff;
+  border: 1px solid #cfe5ff;
+  padding: 10px 12px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #005bb6;
+}
+
+.accordion-toggle:hover {
+  background: #d8eaff;
+}
+
+.accordion-panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.28s ease;
+  padding: 0 12px;
+  background: #fff;
+  border-left: 3px solid #0A67B3;
+  margin-bottom: 12px;
+}
+
+/*FORMS (Contact + Enquiry) */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fefefe;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  background: #005bb6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #0073e6;
+}
+
+/* FIELD VALIDATION */
+.field-error {
+  color: #b00020;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.invalid-field {
+  border-color: #b00020;
+  background-color: #fff6f7;
+}
+
+/* SUCCESS MESSAGE */
+.enq-success {
+  background: #e9fef0;
+  border: 1px solid #bde6c8;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/*RESPONSIVE DESIGN*/
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-left, .header-right {
+    text-align: center;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav a {
+    margin: 5px;
+    font-size: 0.95rem;
+  }
+
+  .header-right p {
+    font-size: 1rem;
+  }
+}
+/* CONTACT FORM NOTIFICATION */
+#notification {
+  text-align: center;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  background-color: #e9fef0;
+  border: 1px solid #bde6c8;
+  color: #155724;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Smooth transition for form buttons */
+.btn-primary {
+  background-color: #005bb6;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0073e6;
+  transform: scale(1.05);
+}
