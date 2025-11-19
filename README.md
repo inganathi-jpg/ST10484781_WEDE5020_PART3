@@ -82,6 +82,6 @@ Smith, R. (2021) ‘How consumers find and choose local businesses’, *Journal 
 ---
 
 ## GitHub Repository
-> [https://github.com/YourUsername/ST10484781_WEDE5020_PART3](https://github.com/YourUsername/ST10484781_WEDE5020_PART3)
+https://github.com/inganathi-jpg/ST10484781_WEDE5020_PART3
 
 
